@@ -1,7 +1,5 @@
 # JsObjects
 
-_by Charlie Calvert_
-
 This repository contains sample code by Charlie Calvert for his classes and for Elvenware. In it you will find various sample JavaScript, HTML, CSS, Node, Bash scripts, and Python Projects.
 
 To properly install a read-only copy of JsObjects first create a directory called *~/Git* if it does not already exist:
