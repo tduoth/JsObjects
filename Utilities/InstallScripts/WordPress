@@ -1,0 +1,120 @@
+#! /bin/bash
+
+TEMP=$HOME/temp
+#WORDPRESS_DIR=wordpress
+#WORDPRESS_DATA_OWNER=foo
+#$WORDPRESS_DATA_PASSWORD=bar
+
+if [ -z "$ELF_UTILS" ]; then
+        echo "ELF_UTILS is unset";
+        exit 1
+else
+        echo "ELF_UTILS is set to '$ELF_UTILS'";
+fi
+
+if [ -z "$ELF_AA_CODE" ]; then
+        echo "ELF_AA_CODE is unset";
+        exit 1
+else
+        echo "ELF_AA_CODE is set to '$ELF_AA_CODE'";
+fi
+
+if [ -z "$WORDPRESS_DIR" ]; then
+        echo "WORDPRESS_DIR is unset";
+        exit 1
+else
+        echo "WORDPRESS_DIR is set to '$WORDPRESS_DIR'";
+fi
+
+if [ -z "$WORDPRESS_DATA_OWNER" ]; then
+        echo "WORDPRESS_DATA_OWNER is unset"
+        exit 1
+else
+        echo "WORDPRESS_DATA_OWNER is set to '$WORDPRESS_DATA_OWNER'";
+fi
+
+if [ -z "$WORDPRESS_DATA_PASSWORD" ]; then
+        echo "WORDPRESS_DATA_PASSWORD is unset."
+        exit 1
+else
+        echo "WORDPRESS_DATA_PASSWORD is set.";
+fi
+
+APACHE_FILE_INFO=( $(stat -c "%a %G %U" /var/www/html) )
+APACHE_PERMISSIONS=${APACHE_FILE_INFO[0]}
+APACHE_GROUP=${APACHE_FILE_INFO[1]}
+APACHE_OWNER=${APACHE_FILE_INFO[2]}
+
+if [ ! $APACHE_OWNER = $USER ]; then
+    echo "The /var/www/html directory is not owned by the current user"
+    echo "consider: sudo chown -R $USER:$USER /var/www/html"
+    exit 1
+fi
+
+# getScriptDirectory was found on StackOverflow. It's not mine.
+# Set $SCRIPT_DIR. Call before you navigate (CD) to another directory
+function getScriptDirectory() {
+    SOURCE="${BASH_SOURCE[0]}"
+    while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+        SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+        SOURCE="$(readlink "$SOURCE")"
+        # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+        [[ $SOURCE != /* ]] && SOURCE="$SCRIPT_DIR/$SOURCE"
+    done
+    SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+}
+
+function tempDir() {
+    if [ -d $TEMP ]; then
+      cd $TEMP
+      pwd
+    else
+      mkdir $TEMP
+      cd $TEMP
+      pwd
+    fi
+}
+
+function setupWpContent() {
+    cd $WORDPRESS_DIR
+    cp wp-config-sample.php wp-config.php
+    # These three lines work, but are commented out as they may need to be customized above
+    sed -i -- 's/database_name_here/'$WORDPRESS_DIR'/' wp-config.php
+    sed -i -- 's/username_here/'$WORDPRESS_DATA_OWNER'/' wp-config.php
+    sed -i -- 's/password_here/'$WORDPRESS_DATA_PASSWORD'/' wp-config.php
+    echo 'Updating, please supply sudo password at first prompt, press enter, then enter the MySQL password'
+    sudo chown -R www-data:www-data wp-content/
+
+    cd ..
+}
+
+function download() {
+    if [ ! -d $WORDPRESS_DIR ]; then
+        # sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
+        wget https://wordpress.org/latest.tar.gz
+        tar -xzvf latest.tar.gz
+
+        setupWpContent
+
+        mv $WORDPRESS_DIR /var/www/html/.
+
+    fi
+}
+
+function mysqlSetup-Old {
+    echo 'Updating MySql. Please supply MYSQL password'
+    mysql -u root -p -e 'create database wordpress;'
+    mysql -u root -p -e 'GRANT ALL PRIVILEGES ON wordpress.* TO "root"@"localhost" IDENTIFIED BY "foobar";'
+    mysql -u root -p -e 'FLUSH PRIVILEGES;'
+    mysql -u root -p -e 'use wordpress; show grants for 'root'@'localhost';'
+}
+
+function mysqlSetup {
+    mysql -u root -p -e 'source '$SCRIPT_DIR'/wordpress.sql;'
+}
+
+
+getScriptDirectory
+tempDir
+download
+mysqlSetup

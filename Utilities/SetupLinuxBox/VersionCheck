@@ -1,0 +1,23 @@
+#! /bin/bash
+
+function message() {
+	echo -e "\n================="
+	echo $1
+	echo =================
+}
+
+message "Running uname -a"
+uname -a 
+
+#message "running file /sbin/init"
+#file /sbin/init 
+
+
+message "cat /etc/lsb-release"
+cat /etc/lsb-release
+
+message "lsb_release -a"
+lsb_release -a
+
+message "do-release-upgrade -c"
+do-release-upgrade -c

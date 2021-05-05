@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="components/jquery/dist/jquery.js"></script>
+    <script src="js/Control.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+  </head>
+  <body>
+    <h1></h1>
+    <p>Welcome to </p><button id="getFive">Get Five</button>
+    <p id="five"></p>
+    <h2>JSON Area</h2>
+    <p>
+      Note that in our tests we never click (trigger) the <strong>Get Scientists</strong> button
+      because we have not provided a way to know when it returns with our JSON. We can however,
+      call the public method of <strong>Control.js</strong> called <strong>getScientists</strong>.
+      That method can be usefully called by our tests because we can know when it returns.
+      In particular, we pass it a callback which is called when it retrieves the JSON we requested.
+    </p><button id="getScientists">Get Scientists</button>
+    <ul id="jsonDisplay"></ul>
+  </body>
+</html>

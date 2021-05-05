@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Node Routes 02</title>
+		<link href="index.css" rel="stylesheet" type="text/css">
+		<script src="index-fetch.js"></script>
+	</head>
+
+	<body>
+		<h1>Node Routes 02</h1>
+		<p>
+			A simple Node Express program. This one differs from Version 01
+			in that it breaks the code up into different folders:
+		</p>
+
+		<ul>
+			<li>Public: Client side code</li>
+			<li>Source: Server side "business" logic.</li>
+			<li>Routes: The place where the server handles URLs (routes) sent from client</li>
+			<li>bin: A stub for starting the application. Start it with one of these options:
+			<ul>
+				<li>node bin/www</li>
+				<li>npm start</li>
+			</ul></li>
+		</ul>
+
+
+        <h2>Simple Get Nine</h2>
+
+        <p id="getNineResult">Get Nine Result will be placed here.</p>
+
+		<a id="getNine" class="button elf">Get Nine</a>
+
+        <h2>Parsed Get Nine</h2>
+
+		<p id="getNineParseResult">Get Nine Result will be placed here.</p>
+
+        <a id="getNineParse" class="button elf">Get Nine Parse</a>
+
+		<h2>Add Numbers with fetch GET</h2>
+
+		<p>On the server side (server.js), use <strong>request.query</strong> to get the paramters.</p>
+
+		<input type="number" id="operandA" value="1" />
+		<input type="number" id="operandB" value="2" />
+		<p id="addResult"> </p>
+		<a id="add" class="button elf">Add Numbers</a>
+
+		<h2>Add Numbers with fetch Post</h2>
+
+		<p>On the server side (server.js), use <strong>request.body</strong> to get the paramters. You must
+		also include <strong>app.use(express.bodyParser());</strong></p>
+		<input type="number" id="operandAPost" value="1" />
+		<input type="number" id="operandBPost" value="2" />
+		<p id="addResultPost"> </p>
+		<a id="addPost" class="button elf">Add Numbers</a>
+
+	</body>
+</html>

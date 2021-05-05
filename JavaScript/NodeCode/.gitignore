@@ -1,0 +1,9 @@
+node_modules
+BuildConfig.java
+.classpath
+project.properties
+bundle.js
+*.map
+*.hot-update.js*
+package-lock.json
+

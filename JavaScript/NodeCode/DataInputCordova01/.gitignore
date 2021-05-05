@@ -1,0 +1,5 @@
+.classpath
+bin/dexedlibs
+bin/res
+*.class
+

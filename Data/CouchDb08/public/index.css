@@ -1,0 +1,23 @@
+p {
+	width: 425px;
+}
+
+label {
+	display: block;
+	width: 120px;
+	padding-top: 2px;
+	padding-right: 15px;
+	clear: both;
+	float: left;
+	text-align: right;
+}
+
+.dataFields, .buttonList {
+	background-color: #DDDDDD;
+	border: thin solid gray;
+	width: 525px;
+}
+
+.buttonList {
+	margin-top: 15px;
+}

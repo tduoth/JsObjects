@@ -1,0 +1,27 @@
+{
+  "name": "gridexpress",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx webpack --watch & nodemon ./bin/www",
+    "build": "npx webpack"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.1.1",
+    "express": "~4.17.1",
+    "http-errors": "~1.7.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}

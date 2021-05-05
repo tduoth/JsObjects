@@ -1,0 +1,30 @@
+{
+  "name": "lookup-server",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "babel-node server/bin/www",
+    "client": "babel-node start-client.js",
+    "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "8.2.2",
+    "express": "4.17.1",
+    "sql.js": "1.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "babel-eslint": "10.0.3",
+    "concurrently": "6.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "^7.23.1"
+  }
+}

@@ -1,0 +1,10 @@
+bin
+gen
+local.properties
+.settings
+.classpath
+lib
+Cordova
+proguard*
+*-CordovaLib*
+plugins

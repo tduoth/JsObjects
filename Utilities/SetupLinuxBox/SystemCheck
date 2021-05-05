@@ -1,0 +1,136 @@
+function message {
+    echo =======================
+    echo $1
+    echo =======================
+}
+
+function spacer {
+    echo
+    echo === $1 ===
+    echo
+}
+
+function checkDirectory {
+    if [ -d $1 ]
+    then
+        echo -e "\tOK: $1"
+    else
+        echo -e "\tNOT OK: $1"
+    fi
+}
+
+function checkFileExists {
+    if [ -e $1 ]
+    then
+        echo -e "\tOK: $1"
+    else
+        echo -e "\tNOT OK: $1"
+    fi
+}
+
+function checkSymbolicLinkExists {
+    if [ -L $1 ]
+    then
+        echo -e "\tOK: $1"
+    else
+        echo -e "\tNOT OK: $1"
+    fi
+}
+
+function checkEnvironmentVariable {
+    # [[ -v ${2//\:} ]]; echo $2
+
+    if [ ! -z "${2:+x}" ]
+    then
+        echo -e "\tOK: \$$1 = $2"
+    else
+        echo -e "\tNOT OK: \$$1"
+    fi
+}
+
+function basics {
+    message "Basic System Check"
+
+    spacer "Directories"
+    checkDirectory $HOME/Git
+    checkDirectory $HOME/bin
+
+    spacer "Files"
+    checkFileExists $HOME/.bash_aliases
+    echo
+}
+
+function node {
+    message "Node Check"
+
+    spacer "Environment Variables"
+    checkEnvironmentVariable JSOBJECTS $JSOBJECTS
+    checkEnvironmentVariable ELF_TEMPLATES $ELF_TEMPLATES
+    checkEnvironmentVariable NODE_PATH $NODE_PATH
+    # [[ -v ${NODE_PATH//:} ]]; echo $NODE_PATH
+
+    spacer "Directories"
+    checkDirectory $HOME/npm
+    echo
+}
+
+function common {
+    message "Common"
+    spacer "Environment Variables"
+    checkEnvironmentVariable JAVA_HOME $JAVA_HOME
+    checkEnvironmentVariable CHROME_BIN $CHROME_BIN
+    echo
+}
+
+function lamp {
+    message "LAMP"
+    spacer "Lamp Setup"
+    checkFileExists /usr/bin/mysql
+    checkFileExists /usr/bin/php
+    checkFileExists /usr/bin/perl
+    checkFileExists /usr/bin/python
+    checkDirectory /var/www
+    checkDirectory /etc/apache2
+}
+
+function sshCheck {
+    message "SSH"
+    spacer "SSH Setup"
+    checkDirectory $HOME/.ssh
+    checkFileExists $HOME/.ssh/authorized_keys
+    checkSymbolicLinkExists $HOME/.ssh/main-key
+    checkEnvironmentVariable SSH_AUTH_SOCK $SSH_AUTH_SOCK
+}
+
+function phoneGap {
+    message "PhoneGap"
+
+    spacer "Environment Variables"
+    checkEnvironmentVariable ANDROID_HOME $ANDROID_HOME
+    checkEnvironmentVariable ANDROID_PLATFORM_TOOLS $ANDROID_PLATFORM_TOOLS
+    echo
+}
+
+while true; do
+    message "Menu"
+    echo "b) Basic System Check"
+    echo "n) Node"
+    echo "c) Common (Java, Chrome)"
+    echo "l) LAMP"
+    echo "s) SSH"
+    echo "p) PhoneGap"
+    echo "x) Exit"
+    echo
+    read -p "Please make a selection and press enter: " eotuyx
+    clear
+    case $eotuyx in
+        [Bb]* ) basics; continue;;
+        [Nn]* ) node; continue;;
+        [Cc]* ) common; continue;;
+        [Ll]* ) lamp; continue;;
+        [Ss]* ) sshCheck; continue;;
+        [Pp]* ) phoneGap; continue;;
+        [Xx]* ) break;;
+        * ) echo "Please answer with n, p or x.";;
+    esac
+done

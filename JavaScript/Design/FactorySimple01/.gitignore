@@ -1,0 +1,8 @@
+*.zip
+_SpecRunner.html
+.grunt
+Deploy
+RunIstanbul.sh
+.settings
+jasmine-2.0.0
+

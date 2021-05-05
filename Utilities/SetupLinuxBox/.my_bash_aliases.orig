@@ -1,0 +1,79 @@
+#! /bin/bash
+
+# Alias definitions.
+
+####################################################
+# Begin Charlie Specific aliases and exports
+# You can delete or ignore the following definitions
+#####################################################
+
+# Writing
+export ELF_WRITE="$GIT_HOME"/writings
+export ELF_WRITE_DATA=$ELF_WRITE/Data
+export ELF_WRITE_TECH=$ELF_WRITE/Tech
+export ELF_AA_CODE=$ELF_WRITE_TECH/AaCode
+export ELF_AA_SCRIPT_DIR="$ELF_AA_CODE"/Scripts
+export ELF_AA_BACKUP_DIR="$ELF_AA_CODE"/AAMeeting/DataBackUps/
+
+alias writing='cd $ELF_WRITE'
+alias wt='cd $ELF_WRITE'
+
+alias wtt="cd $ELF_WRITE/Tech"
+alias wta="cd $ELF_WRITE/Tech/AaCode"
+alias wtds='cd $ELF_WRITE/Tech/DataStructures/'
+alias wtg="cd $ELF_WRITE/Tech/Games"
+alias wtgl="cd $ELF_WRITE/Tech/Games/GameListener"
+alias wtm="cd $ELF_WRITE/Tech/Markdown"
+alias wtme="cd $ELF_WRITE/Tech/Markdown/ElvenSiteTools"
+alias wtpl="cd $ELF_WRITE/Tech/Games/ThreePointerLock"
+alias wtjs='cd $ELF_WRITE/Tech/JsSyntax/'
+alias wtnt="cd $ELF_WRITE/Tech/Network"
+alias wtp="cd $ELF_WRITE/Tech/Programmable"
+alias wtu="cd $ELF_WRITE/UnitTests/Js"
+
+# Elvenware
+export WRITE_ELF=$ELF_WRITE/Elvenware
+alias ec="cd $ELF_WRITE/Elvenware"
+alias ecc="cd $ELF_WRITE/Elvenware/development/cloud/"
+alias ecj="cd $ELF_WRITE/Elvenware/development/web/JavaScript"
+
+alias www='cd /var/www/html'
+alias eplug='cd /var/www/html/wordpress/wp-content/plugins/meeting-search'
+
+# Cloud Notes
+alias cn='cd $GIT_HOME/CloudNotes'
+alias cna='cd $GIT_HOME/CloudNotes/Assignments'
+alias cnar='cd $GIT_HOME/CloudNotes/Assignments/React'
+
+# My Programs
+alias elfa='cd $GIT_HOME/elven-assignments'
+alias awsb="cd $HOME/bin/AwsBasicS3"
+alias gitio="cd $GIT_HUB_IO"
+alias elfsite="cd $GIT_HOME/ElfSite/Code"
+alias nm="ln -s ~/tmp/node_modules/"
+alias components="ln -s ~/tmp/components/ public/components"
+alias nmc="nm && components"
+alias elventools="cd $GIT_HOME/elven-tools"
+alias npmstarter="cd ~/Source/MakeHtml && npm start && cd -"
+<<<<<<< HEAD
+alias gosrc="cd ~/Source"
+=======
+alias eip="cd ~/Git/writings/Tech/Markdown/ElvenImagePicker"
+>>>>>>> b29adc5386f0afccb8c5a51253f9313f61540dcb
+
+# My Courses
+
+alias p270='cd $GIT_HOME/prog270-fall-2016'
+alias p270c='cd $GIT_HOME/prog270-calvert-2016'
+alias i3='cd $GIT_HOME/isit322-2017'
+alias i3c='cd $GIT_HOME/isit322-calvert-2017'
+alias p28='cd $GIT_HOME/Prog282'
+
+# Spring 2016
+alias p2='cd $GIT_HOME/prog272-2017'
+alias p2c='cd $GIT_HOME/prog272-calvert-2017'
+alias p9='cd $GIT_HOME/prog219-2016'
+alias p9c='cd $GIT_HOME/prog219-calvert-2016'
+
+# Apps
+alias fbd='cd ~/Source/firebase-database/'

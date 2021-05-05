@@ -1,0 +1,36 @@
+{
+  "name": "TestBasicDemos",
+  "version": "1.0.0",
+  "description": "Demos for the UnitTestingBasics Slide Deck",
+  "dependencies": {
+    "chai": "^1.10.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0"
+  },
+  "scripts": {
+    "start": "mocha Test",
+    "test": "mocha Test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/charliecalvert/JsObjects.git"
+  },
+  "keywords": [
+    "unit",
+    "test",
+    "mocha",
+    "function",
+    "object"
+  ],
+  "author": "Charlie Calvert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charliecalvert/JsObjects/issues"
+  },
+  "homepage": "https://github.com/charliecalvert/JsObjects"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "jsonRead",
+    "description": "Simple Reading of JSON",
+    "version": "0.0.2",
+    "private": true,
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "4.15.2"
+    }
+}

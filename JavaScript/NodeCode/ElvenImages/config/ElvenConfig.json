@@ -1,0 +1,58 @@
+{
+    "calvert": {
+        "base-dir": "/home/charlie/",
+        "site-dirs": [
+            "ElvenImages",
+            "Documents/AllTest",
+            "Git/CloudNotes/Assignments",
+            "Git/CloudNotes/Prog270",
+            "Git/CloudNotes/Isit322"
+        ],
+        "destination-dirs": [
+            "/var/www/html/",
+            "/var/www/html/Assignments/",
+            "/var/www/html/Prog270/",
+            "/var/www/html/Isit322/"
+        ],
+        "destination-dirs-extra": [
+            {
+                "base": "/var/www/html/",
+                "extra": ""
+            },
+            {
+                "base": "/var/www/html/Assignments/",
+                "extra": "Assignments"
+            }
+        ]
+    },
+    "selectedElvenImages": [
+        "california1",
+        "california2"
+    ],
+    "elvenImages": [
+        {
+            "name": "doc",
+            "baseDir": "The base directory where the images to be processed are found",
+            "cloudPath": "If you are on S3, or the like, then where on S3?",
+            "createSmallImages": true
+        },
+        {
+            "name": "california1",
+            "baseDir": "/var/www/html/images",
+            "cloudPath": "https://s3.amazonaws.com/s3bucket01.elvenware.com",
+            "createSmallImages": true
+        },
+        {
+            "name": "california2",
+            "baseDir": "/var/www/html/images",
+            "cloudPath": "",
+            "createSmallImages": true
+        },
+        {
+            "name": "testImages",
+            "baseDir": "/home/charlie/Git/writings/Tech/Markdown/",
+            "cloudPath": "/images",
+            "createSmallImages": true
+        }
+    ]
+}

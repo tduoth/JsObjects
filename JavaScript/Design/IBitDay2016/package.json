@@ -1,0 +1,30 @@
+{
+  "name": "ibit01",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "karma start",
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.1.1",
+    "express": "~4.17.1",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4",
+    "serve-favicon": "~2.5.0"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-karma": "^3.0.2",
+    "jasmine-core": "^3.5.0",
+    "jasmine-jquery": "^2.1.1",
+    "karma": "~4.4.1",
+    "karma-jasmine": "~3.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "~0.0.32"
+  }
+}

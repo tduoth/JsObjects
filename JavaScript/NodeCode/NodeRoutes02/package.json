@@ -1,0 +1,14 @@
+{
+  "name": "NodeRoutes02",
+  "description": "Simple Reading and writing of JSON",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=NodeRoutes02 nodemon bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "debug": "~2.6.3",
+    "express": "~4.15.2"
+  }
+}

@@ -1,0 +1,20 @@
+extends layout
+
+include menus
+    
+block content
+
+    .header
+        +nav("Jade Mixin", "navigationbar", "navbar-default navbar-fixed-top")
+            +nav_item( "/", "home", "active" ) Home
+            +nav_item( "json-ajax", "json-ajax") JsonAjax
+            +nav_item( "about", "about" ) About
+            +nav_item_dropdown( "#" )( label="Dropdown" )
+                +nav_item( "#" ) Action
+                +nav_item( "#" ) Another action
+                +nav_item( "#" ) Something else here
+                +nav_divider
+                +nav_header Nav header
+                +nav_item( "#" ) Separated link
+                +nav_item( "#" ) One more separated link
+

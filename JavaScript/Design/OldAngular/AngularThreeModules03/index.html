@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html ng-app="elvenApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Angular Two Modules</title>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="Module02.js"></script>
+        <script src="Module01.js"></script>
+    </head>
+    <body>
+        <h1>Angular Two Modules v03</h1>
+        
+        <div ng-controller="BoatController as vm">
+        	<p>{{vm.controllerBoat}} </p>
+        	<p>{{vm.simpleBoat}} </p>
+        	<p>{{vm.sailboat}} </p>
+        	<p>{{vm.getNine()}} </p>
+        </div>
+        
+    </body>
+</html>

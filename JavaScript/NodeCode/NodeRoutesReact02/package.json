@@ -1,0 +1,66 @@
+{
+  "name": "NodeRoutes02",
+  "version": "0.0.2",
+  "description": "Simple Reading and writing of JSON",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charliecalvert/JsObjects.git"
+  },
+  "keywords": [
+    "express",
+    "webpack",
+    "node"
+  ],
+  "author": "Charlie Calvert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charliecalvert/JsObjects/issues"
+  },
+  "homepage": "https://github.com/christianalfoni/webpack-express-boilerplate",
+  "scripts": {
+    "test": "",
+    "start": "nodemon server.js",
+    "build": "node_modules/.bin/webpack",
+    "eslint": "eslint ."
+  },
+  "dependencies": {
+    "express": "~4.16.4",
+    "babel-cli": "~6.26.0",
+    "babel-core": "~6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "react": "~16.8.6",
+    "react-dom": "~16.8.6",
+    "whatwg-fetch": "~3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "~9.5.0",
+    "babel-eslint": "~10.0.1",
+    "babel-loader": "~8.0.5",
+    "babel-preset-stage-0": "~6.24.1",
+    "chai": "~4.2.0",
+    "cross-env": "~5.2.0",
+    "css-loader": "~2.1.1",
+    "eslint": "~5.16.0",
+    "eslint-plugin-react": "~7.12.4",
+    "html-webpack-plugin": "~3.2.0",
+    "jsdom": "~14.0.0",
+    "json-loader": "~0.5.7",
+    "mocha": "~6.0.2",
+    "mocha-jsdom": "~2.0.0",
+    "postcss-loader": "~3.0.0",
+    "react-addons-test-utils": "~15.6.2",
+    "rimraf": "~2.6.3",
+    "sinon": "~7.3.1",
+    "sinon-chai": "~3.3.0",
+    "style-loader": "~0.23.1",
+    "webpack": "~4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-hot-middleware": "^2.24.3"
+  }
+}

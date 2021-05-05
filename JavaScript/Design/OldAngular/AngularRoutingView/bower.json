@@ -1,0 +1,27 @@
+{
+  "name": "angular-routing-view",
+  "version": "0.0.1",
+  "homepage": "https://github.com/charliecalvert/JsObjects",
+  "authors": [
+    "Charlie Calvert"
+  ],
+  "description": "Routes in Angular",
+  "main": "package.json",
+  "keywords": [
+    "routing",
+    "ngRoute"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.3",
+    "angular-routing": "^0.1.2"
+  }
+}

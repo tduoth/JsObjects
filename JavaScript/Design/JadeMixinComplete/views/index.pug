@@ -1,0 +1,14 @@
+extends menu-mixin
+
+include mixins
+
+block append content
+  .container
+
+    h1= title
+    p Welcome to #{title}
+
+
+    +attribution
+
+    +bio

@@ -1,0 +1,14 @@
+{
+    "pathToConfig": "/home/charlie/.config/aws-config.json",
+    "reallyWrite": true,
+    "bucketName": "bucket01.elvenware.com",
+    "folderToWalk": "/home/charlie/Documents/TestCopy",
+    "s3RootFolder": "TestCopyServer",
+    "createFolderToWalkOnS3": true,
+    "createIndex": false,
+    "filesToIgnore": [
+        "Thumbs.db",
+        ".gitignore",
+        "MyFile.html"
+    ]
+}

@@ -1,0 +1,19 @@
+p {
+	width: 425px;
+}
+
+label {
+	display: block;
+	width: 150px;
+	clear: both;
+	float: left;
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 3px;
+}
+
+.dataFields, .buttonList {
+	background-color: #DDDDDD;
+	border: thin solid gray;
+	width: 425px;
+}
