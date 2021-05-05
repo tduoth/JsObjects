@@ -1,6 +1,6 @@
 # JsObjects
 
-In this JsObject code you will know some code that credit by many research online and site. In it you will find various sample JavaScript, HTML, CSS, Node, Bash scripts, and Python Projects.
+In this JsObject code you will know some code that credit by many research online and site thank to my instructor Charles. In it you will find various sample JavaScript, HTML, CSS, Node, Bash scripts, and Python Projects.
 
 To properly install a read-only copy of JsObjects first create a directory called *~/Git* if it does not already exist:
 
